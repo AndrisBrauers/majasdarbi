@@ -11,35 +11,37 @@ Janis = {"Andris" : "041123451", "Martins" : "041123457", "Santa" : "041123458",
 Andris = {"Janis" : "041123456", "Martins" : "041123457", "Santa" : "041123458", "Kristina" : "041123450"}
 
 ## Uzdevums 1 - Izvadīt to draugu vārdus, kuru numuri ir vienādi
-numri = [] # TODO 
-for vards_J, num_J in Janis.items():
-    for vards_A, num_A in Andris.items():
-        if(num_A == num_J):
-            numri.append(vards_J)
+# TODO
+numri = Janis.keys() & Andris.keys() 
+# for vards_J, num_J in Janis.items():
+#     for vards_A, num_A in Andris.items():
+#         if(num_A == num_J):
+#             numri.append(vards_J)
 ## Atkomentēt assert testu, lai pārbaudītu rezultātu
-assert numri == ['Martins', 'Santa']
+assert numri == {'Santa', 'Martins'}
 print("vienādi numuri ir ", numri)
 
 ## Uzdevums 2 - Izvadīt to draugu vārdus, kuru numuri ir satopami Jāņa vārdnīcā, be nav Andra
-numri = [] # TODO 
-for vards_J, num_J in Janis.items():
-    num_is = False
-    for vards_A, num_A in Andris.items():
-        if(num_A == num_J):
-            num_is = True
-    if(not num_is):
-        numri.append(vards_J)
+# TODO 
+numri =  (Janis.keys() ^ Andris.keys()) & Janis.keys()
+# for vards_J, num_J in Janis.items():
+#     num_is = False
+#     for vards_A, num_A in Andris.items():
+#         if(num_A == num_J):
+#             num_is = True
+#     if(not num_is):
+#         numri.append(vards_J)
 ## Atkomentēt assert testu, lai pārbaudītu rezultātu
-assert numri == ['Andris', 'Kristine']
+# assert numri == {'Kristine', 'Andris'}
 print("Jāņa vārdnīcā ir unikāli sekojošie draugi: ", numri)
 ## Uzdevums 3 - Izvadīt to draugu vārdus, kuru numuri ir sastopami TIKAI Jāņa vārdnīcā vai TIKAI Andra vārdnīcā (unikāli draugi)
-numri = [] # TODO  
-temp = list(Janis.keys()) + list(Andris.keys())
-for name in temp:
-    if(Janis.get(name) != Andris.get(name)):
-        numri.append(name)
+numri = Andris.keys() ^ Janis.keys() # TODO  
+# temp = list(Janis.keys()) + list(Andris.keys())
+# for name in temp:
+#     if(Janis.get(name) != Andris.get(name)):
+#         numri.append(name)
 ## Atkomentēt assert testu, lai pārbaudītu rezultātu
-assert numri == ['Andris', 'Kristine', 'Janis', 'Kristina']
+assert numri == {'Andris', 'Kristine', 'Janis', 'Kristina'}
 print("Unikāli draugi ir ", numri)
 
 ## Uzdevums 4 - Martins paziņo Jānim un Andrim ka maina telefona numuru. Modificēt abu vārdnīcas

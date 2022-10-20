@@ -85,7 +85,7 @@ strip = string.whitespace + string.punctuation + string.digits + "\"'" + " "
 ## Izmantojot fukciju  get_text  dabūt saturu no grāmatas kas atrodama files sarakstā otrā rindā
  # TODO
 text = get_text(gramatas[0])
-print(text)
+# print(text)
 ## tekstu pārveidot tā, lai visi burti būtu ar mazo burtu (lower capital)
 # TODO
 text = text.lower() 
@@ -110,7 +110,7 @@ for word in text.split():
         else:
             words[word] += 1
 
-print(words)
+# print(words)
       
 ## Atkomentēt assert testu, lai pārbaudītu rezultātu
 #assert words==helperMajasdarbs.solution_1 # TODO
@@ -123,7 +123,9 @@ top_vardi = []
 all_words = sorted(words.items(), key=sort_by_count, reverse=True)
 top_vardi = [all_words[i][0] for i in range(100)]
 
-print(top_vardi)
+print(all_words[0][0])
+
+# print(top_vardi)
 
 ## Atkomentēt assert testu, lai pārbaudītu rezultātu
 # assert top_vardi==helperMajasdarbs.solution_1_top 
